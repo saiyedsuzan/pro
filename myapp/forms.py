@@ -6,7 +6,7 @@ from .models import Teacher, Student
 class TeacherRegistrationForm(forms.ModelForm):
     class Meta:
         model = Teacher
-        fields = ['name', 'email', 'password']
+        fields = ['tec_id','first_name','last_name', 'email', 'password','subject_taught']
 
 class StudentRegistrationForm(forms.ModelForm):
     class Meta:
