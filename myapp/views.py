@@ -44,6 +44,17 @@ def login_student(request):
                         return redirect('class1')
                     elif student.studentclass == 2:
                         return redirect('class2')
+                    elif student.studentclass == 2:
+                        return redirect('class2')
+                    elif student.studentclass == 2:
+                        return redirect('class2')
+                    elif student.studentclass == 2:
+                        return redirect('class2')
+                    elif student.studentclass == 2:
+                        return redirect('class2')
+                    elif student.studentclass == 2:
+                        return redirect('class2')
+
             except Student.DoesNotExist:
                 pass
         return redirect('login')
