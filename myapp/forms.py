@@ -19,4 +19,4 @@ class StudentRegistrationForm(forms.ModelForm):
 class StudentLoginForm(forms.Form):
     stu_id = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput())
-    studentclass = forms.ChoiceField(choices=[(1, 'Class 1'), (2, 'Class 2'),(3, 'Class 3'),(4, 'Class 4'),(5, 'Class 5'),(6, 'Class 6'),(7, 'Class 7')(8, 'Class 8')])
+    studentclass = forms.ChoiceField(choices=[(1, 'Class 1'), (2, 'Class 2')])

@@ -44,16 +44,16 @@ def login_student(request):
                         return redirect('class1')
                     elif student.studentclass == 2:
                         return redirect('class2')
-                    elif student.studentclass == 2:
-                        return redirect('class2')
-                    elif student.studentclass == 2:
-                        return redirect('class2')
-                    elif student.studentclass == 2:
-                        return redirect('class2')
-                    elif student.studentclass == 2:
-                        return redirect('class2')
-                    elif student.studentclass == 2:
-                        return redirect('class2')
+                    # elif student.studentclass == 2:
+                    #     return redirect('class3')
+                    # elif student.studentclass == 2:
+                    #     return redirect('class4')
+                    # elif student.studentclass == 2:
+                    #     return redirect('class5')
+                    # elif student.studentclass == 2:
+                    #     return redirect('class 6')
+                    # elif student.studentclass == 2:
+                    #     return redirect('class 7')
 
             except Student.DoesNotExist:
                 pass
