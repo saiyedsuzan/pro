@@ -20,3 +20,7 @@ class StudentLoginForm(forms.Form):
     stu_id = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput())
     studentclass = forms.ChoiceField(choices=[(1, 'Class 1'), (2, 'Class 2')])
+
+class TeacherLoginForm(forms.Form):
+    tec_id = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput())

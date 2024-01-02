@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password, check_password
-from .forms import TeacherRegistrationForm, StudentRegistrationForm, StudentLoginForm
+from .forms import TeacherRegistrationForm, StudentRegistrationForm, StudentLoginForm,TeacherLoginForm
 from .models import Teacher, Student 
 
 def register_teacher(request):
@@ -57,7 +57,7 @@ def login_student(request):
 
             except Student.DoesNotExist:
                 pass
-        return redirect('login')
+        return redirect('login_student')
     else:
         form = StudentLoginForm()
     return render(request, 'login_student.html', {'form': form})
@@ -111,3 +111,23 @@ def class2(request):
     #     form = StudentLoginForm()
 
     # return render(request, 'login_student.html', {'form': form})
+def login_teacher(request):
+    if request.method == 'POST':
+        tec_id = request.POST.get('tec_id')
+        password = request.POST.get('password')
+        teacher= authenticate(request, tec_id=tec_id, password=password)
+
+        if Teacher is not None:
+            login(request, teacher)
+            # Redirect to a success page
+            return redirect('register_student')
+        else:
+            pass
+        #    error_message = 'Invalid student ID or password. Please try again.'
+        #    return render(request, 'login_student.html', {'error_message': error_message})
+
+            # Display an error message
+    else:
+         form = TeacherLoginForm()
+         return render(request, 'login_teacher.html', {'form': form})
+    
